@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
-
-const Appointment = db.define('appointment', {
+// This seemed like the best for events for a application of this scale.
+const _Event = db.define('event', {
     year: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -24,4 +24,4 @@ const Appointment = db.define('appointment', {
 
 
 
-module.exports =  Appointment
+module.exports =  _Event

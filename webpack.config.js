@@ -4,7 +4,7 @@ module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: [
     '@babel/polyfill', // enables async-await
-    './CalendarFrontEnd/client/index.js'
+    './CalendarFrontEnd/src/'
   ],
   output: {
     path: __dirname,

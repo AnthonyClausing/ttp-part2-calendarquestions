@@ -1,0 +1,1 @@
+//Best bet would probably be some kind of tree like structure like a tire based off the url

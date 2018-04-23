@@ -1,12 +1,10 @@
 const path = require('path')
 const express = require('express')
-const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const compression = require('compression')
 const db = require('./db')
 const PORT = process.env.PORT || 8080
 const app = express()
-const socketio = require('socket.io')
 module.exports = app
 
 /**
@@ -19,9 +17,6 @@ module.exports = app
  */
 
 const createApp = () => {
-  // logging middleware
-  app.use(morgan('dev'))
-
   // body parsing middleware
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
@@ -30,11 +25,11 @@ const createApp = () => {
   app.use(compression())
 
  
-  // auth and api routes
+  // api routes
   app.use('/api', require('./api'))
 
   // static file-serving middleware
-  app.use(express.static(path.join(__dirname, '../../CalendarFrontEnd', 'public')))
+  app.use(express.static(path.join(__dirname, '../CalendarFrontEnd', 'public')))
 
   // any remaining requests with an extension (.js, .css, etc.) send 404
   app.use((req, res, next) => {
@@ -49,7 +44,7 @@ const createApp = () => {
 
   // sends index.html
   app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../CalendarFrontEnd', 'public/index.html'))
+    res.sendFile(path.join(__dirname, '../CalendarFrontEnd', 'public/index.html'))
   })
 
   // error handling endware
@@ -63,10 +58,6 @@ const createApp = () => {
 const startListening = () => {
   // start listening (and create a 'server' object representing our server)
   const server = app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`))
-
-  // set up our socket control center
-  const io = socketio(server)
-  require('./socket')(io)
 }
 
 const syncDb = () => db.sync()

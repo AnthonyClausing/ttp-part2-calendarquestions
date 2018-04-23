@@ -1,0 +1,226 @@
+:root{
+  --main-color:#48acca;
+  font-size: 16px;
+}
+
+ul {list-style-type: none;}
+body {
+  font-family: Verdana, sans-serif;
+  }
+
+
+/* Month header */
+.month {
+    padding: 2.5rem 0rem;
+    width: 100%;
+    background: #1abc9c;
+    text-align: center;
+}
+
+.calendarHead{
+  color:rgb(231, 231, 231);
+}
+
+/*box around calendar content*/
+.monthContent{
+  display: flex;
+  justify-content: space-between;
+ }
+ 
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    font-size: 2.2rem;
+    align-self: center;
+    transition: all .5s ease;
+}
+
+.month .prev:hover{
+  font-size: 3.2rem;
+  color: black;
+}
+
+/* Next button */
+.month .next {
+  font-size: 2.2rem;  
+  align-self: center;
+  transition: all .5s ease;    
+}
+
+.month .next:hover{
+  font-size: 3.2rem;
+  color: black;
+}
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    padding: 10px 0;
+    border-top: 0.01rem solid black;
+    border-bottom: 0.01rem solid black   
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* My styles*/
+
+.current-day{
+  background-color: rgb(170, 218, 206);
+}
+
+.header{
+  display:flex;
+  justify-content: center;
+  background-color: #928888;
+  color: rgb(115, 175, 165);
+  font-size: 2rem;
+  padding:1rem;
+}
+.headerFlex h1{
+  margin:0;
+}
+
+.headerRight{
+  display: flex;
+  font-size: 1.1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headerRight a{
+  padding: .5rem .5rem;
+  text-decoration: none;
+  color: rgb(56, 160, 192);
+  transition: all .3s ease-in
+}
+
+.headerRight a:hover{
+  background-color: var(--main-color);
+}
+
+.days{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 6rem);
+  padding-left:0;
+  background-color: white
+}
+
+.days .daysEntry{
+  overflow-y: scroll;
+  text-align: left;
+  font-size: 1.1rem;
+  transition: all .4s ease;
+  padding: .25rem;
+  border: 1px solid black;
+}
+
+.days .daysEntry:hover{
+  background-color: var(--main-color);
+  color:white
+}
+
+.not-present{
+  background-color: darkgrey;
+}
+
+.modal{
+  display: none;
+  color:cornflowerblue;
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1;
+  left: 25vw;
+  top: 25vh;
+  width: 50vw; /* Full width */
+  height: 20rem; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color:rgb(247, 225, 104);
+  opacity: 1;
+  border: .1rem solid black;
+}
+
+
+
+.modal-header {
+  display: flex;
+  margin: .5rem;
+  justify-content: space-between;
+  padding: .3rem;
+}
+
+.modal-date{
+  padding:.3rem;
+}
+
+.modal-close{
+  transition: all .2s ease;
+  padding:.3rem;  
+}
+
+.modal-close:hover{
+  color: rgb(212, 69, 50);
+}
+
+.create-event{
+  background-color:rgb(56, 146, 182);
+  color:black;
+  margin:.5rem;
+  padding:.3rem;
+}
+
+.create-event-time{
+  display: flex;
+  justify-content: space-around;
+  margin-top: .3rem;
+}
+
+.create-event-time input{
+  height: 1.25rem;
+  margin: .3rem;
+  font-size: 1rem;
+}
+
+.create-event-description{
+  width:95%;
+  height: 2rem;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(118, 195, 201);
+}
+
+.event-content{
+  margin: .2rem;
+}
+
+.event-time{
+  font-size: .7rem;
+  color: rgb(105, 104, 104)
+}
+
+.event-description {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color:cornflowerblue
+}
