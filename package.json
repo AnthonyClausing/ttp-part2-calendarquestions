@@ -15,7 +15,8 @@
     "seed": "node script/seed.js",
     "start": "node ./CalendarBackEnd/",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server",
-    "start-server": "nodemon ./CalendarBackEnd/ -e html,js,scss --ignore public --ignore client"
+    "start-server": "nodemon ./CalendarBackEnd/ -e html,js,scss --ignore public --ignore client",
+    "db-init": "createdb ttp-part2-calendarquestions"
   },
   "author": "Anthony Clausing",
   "license": "MIT",
